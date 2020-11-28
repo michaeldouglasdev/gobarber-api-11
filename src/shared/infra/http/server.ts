@@ -2,10 +2,13 @@ import 'reflect-metadata';
 
 import express, { Request, Response, NextFunction } from 'express';
 import routes from './routes';
-import uploadConfig from '@config/upload';
-import '@shared/infra/typeorm/database';
 import cors from 'cors';
+
+import uploadConfig from '@config/upload';
 import AppError from '@shared/errors/AppError';
+
+import '@shared/infra/typeorm/database';
+import '@shared/container';
 
 const app = express();
 app.use(cors());
